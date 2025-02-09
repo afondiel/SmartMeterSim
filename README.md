@@ -75,7 +75,7 @@ Before you begin, ensure you have the following:
 
 ## Code Structure
 ```
-EnerSight/
+Energy-Insight-AWS-IoT/
 ├── infra/               # Infrastructure as Code (Terraform or CloudFormation)
 ├── lambda/              # AWS Lambda function code
 ├── docs/                # Documentation (architecture diagrams, etc.)

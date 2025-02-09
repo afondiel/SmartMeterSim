@@ -4,10 +4,6 @@
 
 A real-time analytics for energy meters using AWS IoT services. 
 
-This solution collects data from simulated energy meters via the MQTT protocol, processes and stores the data using Amazon Timestream, and visualizes it in real-time through interactive dashboards with Amazon QuickSight. 
-
-It provides a clear and precise overview of energy consumption, enabling optimized resource management and informed decision-making.
-
 ## Features
 
 *   **Secure Data Collection:** Utilizes MQTT protocol and AWS IoT Core for secure data ingestion from simulated meters.
@@ -20,7 +16,7 @@ It provides a clear and precise overview of energy consumption, enabling optimiz
 
 ![Architecture Diagram (To be added)](./docs/architecture.png)
 
-The key components of the EnerSight architecture are:
+The key components of the Energy-Telemetry-AWS-IoT architecture are:
 
 1.  **Simulated Energy Meters:** Simulated devices sending meter data via MQTT. (using AWS IoT Device Simulator)
 2.  **AWS IoT Core:** Central hub for device connectivity, security, and data routing.
@@ -43,8 +39,8 @@ Before you begin, ensure you have the following:
 1.  **Clone the repository:**
 
     ```
-    git clone <https://github.com/your-username/EnerSight.git>
-    cd EnerSight
+    git clone https://github.com/afondiel/Energy-Telemetry-AWS-IoT.git
+    cd Energy-Telemetry-AWS-IoT
     ```
 
 2.  **Deploy AWS Infrastructure:**
@@ -86,7 +82,7 @@ Energy-Insight-AWS-IoT/
 
 ## Contributing
 
-We welcome contributions to EnerSight! If you'd like to contribute, please follow these steps:
+We welcome contributions to Energy-Telemetry-AWS-IoT! If you'd like to contribute, please follow these steps:
 
 1.  Fork the repository.
 2.  Create a new branch for your feature or bug fix.
@@ -96,10 +92,6 @@ We welcome contributions to EnerSight! If you'd like to contribute, please follo
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
-## Contact
-
-[Your Name] - [Your Email]
 
 ## Acknowledgements
 

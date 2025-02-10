@@ -71,7 +71,7 @@ Before you begin, ensure you have the following:
 
 ## Code Structure
 ```
-Energy-Insight-AWS-IoT/
+Energy-Telemetry-AWS-IoT/
 ├── infra/               # Infrastructure as Code (Terraform or CloudFormation)
 ├── lambda/              # AWS Lambda function code
 ├── docs/                # Documentation (architecture diagrams, etc.)

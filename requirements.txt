@@ -1,0 +1,7 @@
+boto3                # AWS IoT & cloud communication
+paho-mqtt            # MQTT client for publishing & subscribing
+streamlit            # Web dashboard for real-time visualization
+pandas               # CSV data processing
+matplotlib           # Basic visualization (if needed)
+plotly               # Interactive charts in Streamlit
+pyyaml               # Config file handling

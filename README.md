@@ -138,7 +138,7 @@ chmod +x startup.sh
 
 ## Contributing 
 
-Your contribution are welcomed!
+Your contributions are welcomed!
 
 **Future Roadmap**:
 - IoT Smart Meter Simulator (You are here!)

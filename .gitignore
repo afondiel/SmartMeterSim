@@ -1,0 +1,28 @@
+# Ignore Python compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore virtual environments
+venv/
+.env
+*.log
+
+# Ignore AWS credentials (VERY IMPORTANT)
+.aws/
+*.pem
+config/secrets.toml  # Our credentials file
+
+# Ignore MQTT logs or temporary files
+*.db
+*.sqlite
+*.csv
+*.json
+
+# Ignore Streamlit cache
+streamlit_app/.streamlit/
+
+# Ignore VS Code & system files
+.vscode/
+.DS_Store

@@ -140,7 +140,7 @@ chmod +x startup.sh
 
 Your contributions are welcomed!
 
-**Future Roadmap**:
+**🚀 Future Roadmap**:
 - IoT Smart Meter Simulator (You are here!)
 - Scaling & Cloud-to-Edge Transition
 - Real Smart Meter Integration (in your software stack)

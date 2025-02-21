@@ -126,8 +126,16 @@ python src/mqtt_publisher.py
 ```
 
 2️⃣ **Start the Dashboard**  
+- Gradio:
+
 ```bash
-streamlit run src/dashboard.py
+python demo/gradio_app.py
+```
+
+- Streamlit:
+
+```bash
+streamlit run demo/streamlit_app.py
 ```
 
 3️⃣ **All-in: run all at once**

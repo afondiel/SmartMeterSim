@@ -1,12 +1,12 @@
 # ⚡ SmartMeterSim: Smart Meter Monitoring with AWS IoT
 
 ## Overview
-**SmartMeterSim** is an **IoT-based smart meter simulator** that streams **real-time energy consumption data** to AWS IoT Core using **MQTT**. This data is then **visualized in a real-time dashboard** using **Streamlit**.  
+**SmartMeterSim** is an **IoT-based smart meter simulator** that streams **real-time energy consumption data** to AWS IoT Core using **MQTT**. This data is then **visualized in a real-time dashboard**.  
 
 ### **Features**
 - **Simulated Smart Meter** → Publishes real-time energy data  
 - **AWS IoT Core Integration** → Secure MQTT communication  
-- **Streamlit Dashboard** → Live visualization of energy consumption  
+- **Dashboard** → Live visualization of energy consumption  
 - **Scalable Architecture** → Can integrate with real smart meters in future  
 
 ### **Industry Applications**
@@ -23,7 +23,7 @@
 ├── 📂 src
 │   ├── mqtt_publisher.py      # Simulates a smart meter & sends data to AWS IoT
 │   ├── mqtt_subscriber.py     # Receives & processes real-time meter data 
-│   ├── dashboard.py           # Streamlit app for real-time visualization
+│   ├── dashboard.py           # Web app for real-time visualization
 ├── 📂 config
 │   ├── aws_iot_config.json    # AWS endpoint & MQTT topic config
 │   └── secrets.toml           # AWS credentials (gitignored)
@@ -111,7 +111,7 @@ nano secrets.toml  # Edit and add your credentials
 1. **Reads** energy consumption data from CSV.  
 2. **Simulates real-time readings** → Sends data to AWS IoT via MQTT.  
 3. **Subscribes** to AWS IoT Core → Receives & logs energy data.  
-4. **Displays** live consumption trends in a **Streamlit dashboard**.  
+4. **Displays** live consumption trends dashboard**.  
 
 ### 🔒 **Security**
 - **TLS Encryption for MQTT Communication**  

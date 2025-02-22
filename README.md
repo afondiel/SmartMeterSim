@@ -46,7 +46,7 @@ pip install -r requirements.txt
 ```
 
 ### **Set up AWS IoT Core & Credentials**
-> [!IMPORTANT] \
+> [!IMPORTANT]\
 > AWS Account with **AWS IoT Core** (Mandatory!)
 
 1️⃣ **Using AWS Management Console** 

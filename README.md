@@ -23,6 +23,7 @@
 ├── 📂 src
 │   ├── mqtt_publisher.py      # Simulates a smart meter & sends data to AWS IoT
 │   ├── mqtt_subscriber.py     # Receives & processes real-time meter data 
+├── 📂 demo
 │   ├── dashboard.py           # Web app for real-time visualization
 ├── 📂 config
 │   ├── aws_iot_config.json    # AWS endpoint & MQTT topic config

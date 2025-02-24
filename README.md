@@ -1,53 +1,62 @@
-# ⚡ SmartMeterSim: Smart Meter Monitoring with AWS IoT
+# ⚡ SmartMeterSim
 
 ## Overview
-**SmartMeterSim** is an **IoT-based smart meter simulator** that streams **real-time energy consumption data** to AWS IoT Core using **MQTT**. This data is then **visualized in a real-time dashboard**.  
+**SmartMeterSim** is a smart meter IoT simulator for real-time energy consumption monitoring using AWS IoT Core and Gradio. This project provides a foundation for real-world applications such as smart grid and home automation. 
 
 ### **Features**
-- **Simulated Smart Meter** → Publishes real-time energy data  
-- **AWS IoT Core Integration** → Secure MQTT communication  
-- **Dashboard** → Live visualization of energy consumption  
-- **Scalable Architecture** → Can integrate with real smart meters in future  
+- **Simulated Smart Meter**: Publishes real-time energy data  
+- **AWS IoT Core Integration**: Secure MQTT.v5 communication  
+- **Dashboard**: Live visualization of energy consumption  
+- **Scalable Architecture**: Can integrate with real smart meters device 
 
-### **Industry Applications**
-- Smart Grid            # Grid monitoring, energy analytics
-- Industrial IoT(IIoT)  # IoT energy metering in factories
-- Home Automation       # Integration with smart home systems
-- EV Charging           # Energy usage tracking for EV charging stations
+### **Real-world Applications**
+- **Smart Grid**: Grid monitoring, energy analytics
+- **Industrial IoT(IIoT)**: IoT energy metering in factories
+- **Home Automation**: Integration with smart home systems
+- **EV Charging**: Energy usage tracking for EV charging stations
 
 ## **Project Structure**
 ```
 📂 SmartMeterSim/
+├── 📂 auth/                  # Device cert, key, ca, policy files (gitignored)
 ├── 📂 data
-│   ├── smart_meter_data.csv   # Simulated energy meter readings
+│   ├── smart_meter_data.csv   # Energy meter data
 ├── 📂 src
 │   ├── mqtt_publisher.py      # Simulates a smart meter & sends data to AWS IoT
 │   ├── mqtt_subscriber.py     # Receives & processes real-time meter data 
-├── 📂 demo
-│   ├── dashboard.py           # Web app for real-time visualization
-├── 📂 config
-│   ├── aws_iot_config.json    # AWS endpoint & MQTT topic config
-│   └── secrets.toml           # AWS credentials (gitignored)
-└── 📂 auth/                   # IoT device & root/IAM user certs files: policy, cert, ca, key (gitignored)
+├── 📂 dashboard
+│   ├── gradio_app.py           # Live visualization
+│   ├── streamlit_app.py        # Real-time visualization
+└── 📂 config
+    └── aws_iot_config.json    # AWS IoT credentials (endpoint, topic, devide Id ...)
 ``` 
 
 ## 🔧 **Setup & Installation**
 
-### **Clone the repository**  
+### Prerequisites
+- Python 3.7+
+- AWS Account with AWS IoT Core access
+
+### Steps 
+
+1. **Clone the repository**  
 
 ```bash
 git clone https://github.com/afondiel/SmartMeterSim.git
 cd SmartMeterSim
 ```
+2. Create a virtual environment (Recommended)
+```bash
+python3 -m venv .smsenv
+source .smsenv/bin/activate
+```
 
-### **Install dependencies**  
+3. **Install dependencies**  
 ```bash
 pip install -r requirements.txt
 ```
 
 ### **Set up AWS IoT Core & Credentials**
-> [!IMPORTANT]\
-> AWS Account with **AWS IoT Core** (Mandatory!)
 
 1️⃣ **Using AWS Management Console** 
 
@@ -70,22 +79,34 @@ ping <your-aws-iot-account>-ats.iot.<region>.amazonaws.com
             "Effect": "Allow",
             "Action": [
                 "iot:Connect",
+            ],
+            "Resource": ["arn:aws:iot:YOUR_REGION:YOUR_AWS_ACCOUNT_ID:connect/${client_id}"]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
                 "iot:Publish",
                 "iot:Receive",
-                "iot:Subscribe"
+                "iot:PublishRetain"
             ],
             "Resource": ["arn:aws:iot:YOUR_REGION:YOUR_AWS_ACCOUNT_ID:topic/smartmeter/data"]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iot:Subscribe"
+            ],
+            "Resource": ["arn:aws:iot:YOUR_REGION:YOUR_AWS_ACCOUNT_ID:topicfilter/smartmeter/data"]
         }
     ]
 }
 ```
 
-2️⃣ **Using AWS IoT CLI**
-
-Here's a full AWS IoT setup script [setup_aws_iot.sh](setup_aws_iot.sh) to spare you some time 
+2️⃣ **Install all at once using AWS IoT CLI**
 
 Run the script:
 ```bash
+cd resources/tools/scripts
 chmod +x setup_aws_iot.sh
 ./setup_aws_iot.sh
 ```
@@ -100,26 +121,8 @@ Finally:
 cp aws_iot_config_temp aws_iot_config.json  # Create a copy
 nano aws_iot_config  # Edit and add your credentials
 ``` 
-- Update `config/secrets.toml` with your AWS settings.
-```bash
-cp secrets-template.toml secrets.toml  # Create a copy
-nano secrets.toml  # Edit and add your credentials
-``` 
 
-## Getting Started
-
-### 📌 **How It Works**
-1. **Reads** energy consumption data from CSV.  
-2. **Simulates real-time readings** → Sends data to AWS IoT via MQTT.  
-3. **Subscribes** to AWS IoT Core → Receives & logs energy data.  
-4. **Displays** live consumption trends dashboard**.  
-
-### 🔒 **Security**
-- **TLS Encryption for MQTT Communication**  
-- **AWS IoT Policies for Controlled Access**  
-- **Environment Secrets for Credential Protection**  
-
-### Usage
+## Usage
 
 1️⃣ **Run the Smart Meter Simulator**  
 ```bash
@@ -139,20 +142,27 @@ python demo/gradio_app.py
 streamlit run demo/streamlit_app.py
 ```
 
-3️⃣ **All-in: run all at once**
+3️⃣ **Run all components at once**
 ```bash
 chmod +x startup.sh
 ./startup.sh
 ```
 
+## Security*
+- TLS Encryption for MQTT Communication  
+- AWS IoT Policies for Controlled Access
+- Environment Secrets for Credential Protection  
+
 ## Contributing 
 
-Your contributions are welcomed!
+Contributions to SmartMeterSim are welcome! Please refer to the project's GitHub repository for contribution guidelines.
 
-**🚀 Future Roadmap**:
-- IoT Smart Meter Simulator (You are here!)
-- Scaling & Cloud-to-Edge Transition
-- Real Smart Meter Integration (in your software stack)
+## Future Roadmap
+1. IoT Smart Meter Simulator (Current Stage)
+2. Scaling & Cloud-to-Edge Transition
+3. Real Smart Meter Integration (in your software stack)
 
-## **📩 Contact**
-🔗 Connect via [LinkedIn](https://linkedin.com/in/afonso-diela) or reach out for **IoT consulting & smart metering solutions**!
+## Contact
+
+If you have any questions or need assistance with setting up the project, feel free to reach out to me on [LinkedIn](https://linkedin.com/in/afonso-diela). I'll be happy to help!
+

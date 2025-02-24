@@ -101,7 +101,8 @@ ping <your-aws-iot-account>-ats.iot.<region>.amazonaws.com
     ]
 }
 ```
-
+Go back to AWS IoT Core and update the thing policy json file and set the new version as "ACTIVE" 
+ 
 2️⃣ **Install all at once using AWS IoT CLI**
 
 Run the script:
@@ -125,30 +126,50 @@ nano aws_iot_config  # Edit and add your credentials
 ## Usage
 
 1️⃣ **Run the Smart Meter Simulator**  
+
+Run in this order: `subscriber > publisher`
+
+Subscriber: connects and receives data from AWS IoT MQTT Broker
+
 ```bash
-python src/mqtt_publisher.py
+  python3 src/mqtt_subscriber.py \
+    --endpoint <YOUR_AWS_ENDPOINT> \
+    --rootCA <ROOT_CA_PATH> \
+    --cert <CERT_PATH> \
+    --key <KEY_PATH> \
+    --logFile <YOUR_LOG_FILE_PATH> \
+    --clientId <CLIENT_ID> \
+    --topic <TOPIC>
+```
+- Publisher: connects and sends device data to the AWS IoT MQTT Broker 
+
+```bash
+  python3 src/mqtt_publisher.py \
+    --path <CSV_PATH> \
+    --endpoint <YOUR_AWS_ENDPOINT> \
+    --rootCA <ROOT_CA_PATH> \
+    --cert <CERT_PATH> \
+    --key <KEY_PATH> \
+    --clientId <CLIENT_ID> \
+    --delay <DELAY> \
+    --topic <TOPIC> 
 ```
 
 2️⃣ **Start the Dashboard**  
 - Gradio:
 
 ```bash
-python demo/gradio_app.py
+  python3 dashboard/gradio_app.py \
+    --logFile <YOUR_LOG_FILE_PATH>
 ```
 
 - Streamlit:
 
 ```bash
-streamlit run demo/streamlit_app.py
+streamlit run dashboard/streamlit_app.py (TBD)
 ```
 
-3️⃣ **Run all components at once**
-```bash
-chmod +x startup.sh
-./startup.sh
-```
-
-## Security*
+## Security
 - TLS Encryption for MQTT Communication  
 - AWS IoT Policies for Controlled Access
 - Environment Secrets for Credential Protection  
@@ -164,5 +185,5 @@ Contributions to SmartMeterSim are welcome! Please refer to the project's GitHub
 
 ## Contact
 
-If you have any questions or need assistance with setting up the project, feel free to reach out to me on [LinkedIn](https://linkedin.com/in/afonso-diela). I'll be happy to help!
+Feel free to reach out to me on [LinkedIn](https://linkedin.com/in/afonso-diela), if you have any questions. I'll be glad to help!
 

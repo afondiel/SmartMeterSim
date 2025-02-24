@@ -1,0 +1,7 @@
+{
+  "host": "your-aws-iot-endpoint.amazonaws.com",  // Looks like this: <account-specific-prefix>-ats.iot.<region>.amazonaws.com
+  "port": 8883,                                   // TLS port
+  "client_id": "SmartMeterSim",                   // MQTT Unique ID
+  "topic": "smartmeter/data",                     // Topic to publish to 
+  "qos": 1                                        // Quality of Service 
+}

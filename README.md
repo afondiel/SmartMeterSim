@@ -1,7 +1,7 @@
 # ⚡ SmartMeterSim
 
 ## Overview
-**SmartMeterSim** is a smart meter IoT simulator for real-time energy consumption monitoring using AWS IoT Core and Gradio. This project provides a foundation for real-world applications such as smart grid and home automation. 
+**SmartMeterSim** is an IoT smart meter simulator for real-time energy monitoring, enabling cloud integration with AWS IoT Core and Interactive dashboard for real-time data visualization. It serves as a foundation for real-world applications such as smart grid and home automation.
 
 ### **Features**
 - **Simulated Smart Meter**: Publishes real-time energy data  

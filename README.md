@@ -155,7 +155,10 @@ Subscriber: connects and receives data from AWS IoT MQTT Broker
     --topic <TOPIC> 
 ```
 
-2️⃣ **Start the Dashboard**  
+2️⃣ **Start the Dashboard**
+
+[![Demo on HF Spaces](https://huggingface.co/datasets/huggingface/badges/resolve/main/open-in-hf-spaces-sm-dark.svg)](https://huggingface.co/spaces/afondiel/smartmetersim)
+
 - Gradio:
 
 ```bash

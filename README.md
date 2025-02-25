@@ -1,5 +1,9 @@
 # ⚡ SmartMeterSim
 
+[![Demo on HF Spaces](https://huggingface.co/datasets/huggingface/badges/resolve/main/open-in-hf-spaces-sm-dark.svg)](https://huggingface.co/spaces/afondiel/smartmetersim)
+<!-- <p style="text-align: center;"> <img loading="lazy" decoding="async" class="aligncenter size-full" src="resources/demo/cover.png" style="max-width: 100%; height: auto;" width="1280" height="720"></p> -->
+<p style="text-align: center;"> <img loading="lazy" decoding="async" class="aligncenter size-full" src="resources/demo/cover.png" style="max-width: 100%; height: auto;" width="1280" height="720"></p>
+
 ## Overview
 **SmartMeterSim** is an IoT smart meter simulator for real-time energy monitoring, enabling cloud integration with AWS IoT Core and Interactive dashboard for real-time data visualization. It serves as a foundation for real-world applications such as smart grid and home automation.
 
@@ -57,6 +61,8 @@ pip install -r requirements.txt
 ```
 
 ### **Set up AWS IoT Core & Credentials**
+
+<img src="resources/demo/AWS_IoT_Core.jpg">
 
 1️⃣ **Using AWS Management Console** 
 

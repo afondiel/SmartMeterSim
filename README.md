@@ -1,6 +1,6 @@
 # ⚡ SmartMeterSim
 
-[![Demo on HF Spaces](https://huggingface.co/datasets/huggingface/badges/resolve/main/open-in-hf-spaces-sm-dark.svg)](https://huggingface.co/spaces/afondiel/smartmetersim)
+[![Demo on HF Spaces](https://huggingface.co/datasets/huggingface/badges/resolve/main/open-in-hf-spaces-sm-dark.svg)](https://huggingface.co/spaces/afondiel/SmartMeterSim)
 <!-- <p style="text-align: center;"> <img loading="lazy" decoding="async" class="aligncenter size-full" src="resources/demo/cover.png" style="max-width: 100%; height: auto;" width="1280" height="720"></p> -->
 <p style="text-align: center;"> <img loading="lazy" decoding="async" class="aligncenter size-full" src="resources/demo/cover.png" style="max-width: 100%; height: auto;" width="1024" height="512"></p>
 
@@ -163,7 +163,7 @@ Subscriber: connects and receives data from AWS IoT MQTT Broker
 
 2️⃣ **Start the Dashboard**
 
-[![Demo on HF Spaces](https://huggingface.co/datasets/huggingface/badges/resolve/main/open-in-hf-spaces-sm-dark.svg)](https://huggingface.co/spaces/afondiel/smartmetersim)
+[![Demo on HF Spaces](https://huggingface.co/datasets/huggingface/badges/resolve/main/open-in-hf-spaces-sm-dark.svg)](https://huggingface.co/spaces/afondiel/SmartMeterSim)
 
 - Gradio:
 
